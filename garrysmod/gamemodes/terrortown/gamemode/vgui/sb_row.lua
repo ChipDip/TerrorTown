@@ -1,4 +1,3 @@
-
 ---- Scoreboard player score row, based on sandbox version
 
 include("sb_info.lua")
@@ -27,6 +26,9 @@ function PANEL:Init()
 
    self.cols[3] = vgui.Create("DLabel", self)
    self.cols[3]:SetText(GetTranslation("sb_score"))
+   
+  self.cols[5] = vgui.Create("DLabel", self)
+  self.cols[5]:SetText("Rank")
 
    if KARMA.IsEnabled() then
       self.cols[4] = vgui.Create("DLabel", self)
@@ -58,21 +60,35 @@ function PANEL:Init()
    self:SetCursor( "hand" )
 end
 
+----EDIT THESE TO ADD MORE COLOURS----
+----Example: test = COLOR_BLUE----
+---Make sure to put a comma after each line until the end (Last one doesn't have one---
 
 local namecolor = {
    default = COLOR_WHITE,
-   admin = Color(220, 180, 0, 255),
-   dev = Color(100, 240, 105, 255)
+   superadmin = Color(65, 105, 225, 255),
+   admin = Color(100, 149, 237, 255),
+   moderator = Color(186, 85, 211, 255),
+   donator = Color(255, 215, 0, 255),
 };
 
 function GM:TTTScoreboardColorForPlayer(ply)
    if not IsValid(ply) then return namecolor.default end
 
-   if ply:SteamID() == "STEAM_0:0:1963640" then
-      return namecolor.dev
-   elseif ply:IsAdmin() and GetGlobalBool("ttt_highlight_admins", true) then
-      return namecolor.admin
-   end
+     --ADD NAMECOLOURS HERE--
+--   if ply:SteamID() == "STEAM_0:0:1963640" then
+--      return namecolor.dev
+--   elseif ply:IsAdmin() and GetGlobalBool("ttt_highlight_admins", true) then
+--      return namecolor.admin
+     if ply:IsUserGroup("superadmin") then
+        return namecolor.superadmin
+     elseif ply:IsUserGroup("admin") then
+        return namecolor.admin
+     elseif ply:IsUserGroup("moderator") then
+        return namecolor.moderator
+     elseif ply:IsUserGroup("donator") then
+        return namecolor.donator
+     end
    return namecolor.default
 end
 
@@ -164,6 +180,28 @@ function PANEL:UpdatePlayerData()
    self.nick:SetText(ply:Nick())
    self.nick:SizeToContents()
    self.nick:SetTextColor(ColorForPlayer(ply))
+   
+   
+	if ply:IsUserGroup("superadmin") then
+		self.cols[5]:SetText("Owner")
+		self.cols[5]:SetTextColor(namecolor.superadmin)
+  elseif ply:IsUserGroup("admin") then
+		self.cols[5]:SetText("Admin")
+		self.cols[5]:SetTextColor(namecolor.superadmin)
+	elseif ply:IsUserGroup("moderator") then
+		self.cols[5]:SetText("Moderator")
+		self.cols[5]:SetTextColor(namecolor.moderator)
+  elseif ply:IsUserGroup("user") then
+		self.cols[5]:SetText("")
+		self.cols[5]:SetTextColor(namecolor.default)
+  elseif ply:IsUserGroup("donator") then
+    self.cols[5]:SetText("Donator") 
+    self.cols[5]:SetTextColor(namecolr.donator)
+--	elseif ply:IsUserGroup("admin") then
+--		self.cols[5]:SetText("Admin")
+--		self.cols[5]:SetTextColor(Color(220, 180, 0, 255))
+--  Delete the -- and change the settings to your liking. DO NOT DELETE THE 'end'
+	end
 
    local ptag = ply.sb_tag
    if ScoreGroup(ply) != GROUP_TERROR then

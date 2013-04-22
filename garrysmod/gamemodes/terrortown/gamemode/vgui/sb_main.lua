@@ -1,4 +1,3 @@
-
 ---- VGUI panel version of the scoreboard, based on TEAM GARRY's sandbox mode
 ---- scoreboard.
 
@@ -130,6 +129,9 @@ function PANEL:Init()
    self.cols[3] = vgui.Create( "DLabel", self )
    self.cols[3]:SetText( GetTranslation("sb_score") )
 
+   self.cols[5] = vgui.Create( "DLabel", self )
+   self.cols[5]:SetText("Rank")
+   
    if KARMA.IsEnabled() then
       self.cols[4] = vgui.Create("DLabel", self)
       self.cols[4]:SetText(GetTranslation("sb_karma"))
@@ -327,4 +329,3 @@ function PANEL:PerformLayout()
    self.pnlCanvas:SetSize( self:GetWide() - (self.scroll.Enabled and 16 or 0), self.pnlCanvas:GetTall() )
 end
 vgui.Register( "TTTPlayerFrame", PANEL, "Panel" )
-
