@@ -29,7 +29,7 @@ SWEP.Primary.Ammo        = "smg1"
 SWEP.Primary.ClipSize    = 45
 SWEP.Primary.ClipMax     = 90
 SWEP.Primary.DefaultClip = 45
-SWEP.Primary.Sound       = Sound( "Weapon_AK47.Single" )
+SWEP.Primary.Sound       = Sound( "Weapon_AWP.Single" )
 
 SWEP.IronSightsPos = Vector( 6.05, -5, 2.4 )
 SWEP.IronSightsAng = Vector( 2.2, -0.1, 0 )
@@ -81,7 +81,7 @@ if CLIENT then
    -- Text shown in the equip menu
    SWEP.EquipMenuData = {
       type = "Weapon",
-      desc = "Example custom weapon."
+      desc = "Just a few shots with this and you've got yourself a body!"
    };
 end
 
@@ -91,6 +91,6 @@ if SERVER then
    -- file differences, it only looks at the name. This means that if you have
    -- an icon_ak47, and another server also has one, then players might see the
    -- other server's dumb icon. Avoid this by using a unique name.
-   resource.AddFile("materials/VGUI/ttt/icon_myserver_ak47.vmt")
+   resource.AddFile("materials/VGUI/ttt/icon_ak47.vmt")
 end
 
