@@ -6,11 +6,9 @@ end
 SWEP.HoldType           = "ar2"
 
 if CLIENT then
-   SWEP.PrintName          = "rifle_name"
+   SWEP.PrintName          = "barret_name"
 
    SWEP.Slot               = 2
-
-   SWEP.Icon = "VGUI/ttt/icon_scout"
 end
 
 
@@ -20,6 +18,7 @@ SWEP.AdminSpawnable = true
 
 SWEP.Kind = WEAPON_HEAVY
 SWEP.WeaponID = AMMO_RIFLE
+SWEP.CanBuy = { ROLE_TRAITOR }
 
 SWEP.Primary.Delay          = 1.5
 SWEP.Primary.Recoil         = 7
@@ -38,7 +37,7 @@ SWEP.AmmoEnt = "item_ammo_357_ttt"
 SWEP.ViewModel          = Model("models/weapons/gearsgaming.com/barret/v_snip_awp.mdl")
 SWEP.WorldModel         = Model("models/weapons/gearsgaming.com/barret/w_snip_awp.mdl")
 
-SWEP.Primary.Sound = Sound(")weapons/scout/scout_fire-1.wav")
+SWEP.Primary.Sound = Sound( "Weapon_AWP.Single" )
 
 SWEP.Secondary.Sound = Sound("Default.Zoom")
 
@@ -143,6 +142,17 @@ if CLIENT then
    function SWEP:AdjustMouseSensitivity()
       return (self:GetIronsights() and 0.2) or nil
    end
+end
+
+if CLIENT then
+   -- Path to the icon material
+   SWEP.Icon = "VGUI/ttt/icon_gearsgaming.com_barret"
+
+   -- Text shown in the equip menu
+   SWEP.EquipMenuData = {
+      type = "Weapon",
+      desc = "One shot one kill..."
+   };
 end
 
 if SERVER then

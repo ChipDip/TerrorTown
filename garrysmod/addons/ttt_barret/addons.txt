@@ -1,0 +1,10 @@
+"AddonInfo"
+{
+        "name"              "TTT Barret Rifle"
+        "version"           "1.0"
+        "up_date"           "4/27/13"
+        "author_name"       "BizBink"
+        "author_email"      ""
+        "info"              "This barret rifle is a traitor weapon"
+        "override"          "0"
+}

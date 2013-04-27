@@ -1,0 +1,10 @@
+"AddonInfo"
+{
+        "name"              "TTT Ak47 Weapon"
+        "version"           "1.0"
+        "up_date"           "4/27/13"
+        "author_name"       "BizBink"
+        "author_email"      ""
+        "info"              "Traitor weapon"
+        "override"          "0"
+}

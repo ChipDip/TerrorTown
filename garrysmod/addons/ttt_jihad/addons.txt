@@ -1,0 +1,10 @@
+"AddonInfo"
+{
+        "name"              "Jihad Bomb"
+        "version"           "1.0"
+        "up_date"           "4/27/13"
+        "author_name"       "BizBink"
+        "author_email"      ""
+        "info"              "Blow yourself up in the name of traitors"
+        "override"          "0"
+}

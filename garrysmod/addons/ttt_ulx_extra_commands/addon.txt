@@ -1,0 +1,20 @@
+"AddonInfo"
+{
+        "name"              "TTT ULX Commands"
+        "version"           "Unknown"
+        "up_date"           "Unknown"
+        "author_name"       "http://forums.ulyssesmod.net/index.php/topic,6194.0.html"
+        "author_email"      ""
+        
+        "info"              "Adds 6 commands to ULX that are useful in TTT:
+                              - Respawn (Respawns target player) 
+                              - Traitor (Forces target player to assume the role of traitor.) 
+                              - Detective (Forces target player to assume the role of detective.) 
+                              - Innocent (Forces target player to assume the role of innocent.) 
+                              - AFK (Forces the target player into specctator mode the same way the gamemode would.)
+                              - Karma (Allows admins to set players karma)
+                              
+                            More info at http://forums.ulyssesmod.net/index.php/topic,6194.0.html."
+                              
+        "override"          "0"
+}

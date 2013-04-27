@@ -1,0 +1,10 @@
+"AddonInfo"
+{
+        "name"              "TTT Leadboard Ranks"
+        "version"           "1.0"
+        "up_date"           "4/27/13"
+        "author_name"       "BizBink"
+        "author_email"      ""
+        "info"              "Adds ranks in TTT leaderboard"
+        "override"          "1"
+}

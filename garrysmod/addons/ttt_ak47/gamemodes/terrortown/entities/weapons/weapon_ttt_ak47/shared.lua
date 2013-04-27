@@ -29,7 +29,6 @@ SWEP.Primary.Ammo        = "smg1"
 SWEP.Primary.ClipSize    = 45
 SWEP.Primary.ClipMax     = 90
 SWEP.Primary.DefaultClip = 45
-SWEP.Primary.Sound       = Sound( "Weapon_AWP.Single" )
 
 SWEP.IronSightsPos = Vector( 6.05, -5, 2.4 )
 SWEP.IronSightsAng = Vector( 2.2, -0.1, 0 )
@@ -76,12 +75,12 @@ SWEP.NoSights = false
 -- Equipment menu information is only needed on the client
 if CLIENT then
    -- Path to the icon material
-   SWEP.Icon = "VGUI/ttt/icon_myserver_ak47"
+   SWEP.Icon = "VGUI/ttt/icon_ak47"
 
    -- Text shown in the equip menu
    SWEP.EquipMenuData = {
       type = "Weapon",
-      desc = "Just a few shots with this and you've got yourself a body!"
+      desc = "Just a few shots with this \nand you've got yourself a body!"
    };
 end
 
